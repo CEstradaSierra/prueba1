@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+
+
+<h1>factorial con for</h1>
+
+<input/>
+<button>mostrar factorial en pantalla</button>
+
+<script>
+    function saltarlinea(){
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<hr>");
+    }
+    function imprimir(frase){
+        document.write(frase);
+        saltarlinea();
+    }
+    function factorial(numero){
+        var factotal=1;
+        if(numero==0 || numero==1){
+            factotal=1;
+        }
+        else{
+            for(var i=0;i<numero;i++){
+                x= numero-i;
+                // el factorial factotal=factotal*x
+                factotal= factotal*x;
+        }
+
+        }
+
+        return factotal;
+    }
+    var input = document.querySelector("input");
+    input.focus();
+    function verificar(){
+        var valor= parseInt(input.value);
+        imprimir("el factorial de "+valor+" es "+factorial(valor));
+    }
+    var valor = factorial(parseInt(input.value));
+    var button=document.querySelector("button");
+    button.onclick=verificar;
+
+</script>
